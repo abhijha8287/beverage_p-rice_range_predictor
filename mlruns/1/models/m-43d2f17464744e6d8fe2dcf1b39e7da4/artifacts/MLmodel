@@ -1,0 +1,22 @@
+artifact_path: file:c:/Users/abhij/OneDrive/Desktop/code basics/intership1/week-3,4/project_resources1/project_resources1/mlruns/1/models/m-43d2f17464744e6d8fe2dcf1b39e7da4/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.14.0
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+mlflow_version: 3.8.0
+model_id: m-43d2f17464744e6d8fe2dcf1b39e7da4
+model_size_bytes: 1716849
+model_uuid: m-43d2f17464744e6d8fe2dcf1b39e7da4
+prompts: null
+run_id: 2bfd598cdd81426e857fcc8e6290e621
+utc_time_created: '2026-01-20 14:26:40.412248'
