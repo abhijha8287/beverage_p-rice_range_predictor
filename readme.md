@@ -1,114 +1,43 @@
-# 🥤 Beverage Price Prediction using Machine Learning
+# Beverage Price Range Predictor
 
-This project is an end-to-end Machine Learning application that predicts the **price range of a beverage** based on customer demographics, preferences, and consumption behavior.
+Predicts the price range a customer is likely to pay for a beverage from survey answers, with a Streamlit app.
 
-It demonstrates a complete ML lifecycle including:
-- Data Cleaning
-- Feature Engineering
-- Model Training & Comparison
-- Experiment Tracking using **MLflow**
-- Best Model Selection
-- Deployment using **Streamlit** for real-time predictions
+## Why this exists
+End-to-end machine learning practice: from a raw survey to a tracked, deployed model, following the provided cleaning, feature-engineering and modelling guides.
 
----
+## What it does
+- Cleans the survey data and fixes logical outliers
+- Adds features: age group, consumption-frequency and awareness score, zone affluence score, brand-switching indicator
+- Trains and compares Gaussian Naive Bayes, logistic regression, SVM, random forest and XGBoost
+- Logs every run to MLflow and saves the most accurate model
+- `app.py` takes a customer's answers, applies the same features and predicts the price range
 
-## 🌐 Live Demo
+## Project structure
+```
+beverage_p-rice_range_predictor/
+├── file.ipynb                             Cleaning, features, training
+├── survey_results.csv                     Raw survey data
+├── meta_data.txt                          Column descriptions
+├── *_instructions.pdf, *_guide.pdf        Task guides
+├── mlruns/                                MLflow run logs
+├── best_model.pkl                         Selected model
+├── model_columns.pkl                      Expected input columns
+├── app.py                                 Streamlit prediction app
+└── requirements.txt                       Python dependencies
+```
 
-🚀 Try the app here:  
-👉 https://beveragepricerangepredictorbyabhishek.streamlit.app/
+## Getting started
+Requirements: Python 3.10+.
+```bash
+git clone https://github.com/abhijha8287/beverage_p-rice_range_predictor.git
+cd beverage_p-rice_range_predictor
+pip install -r requirements.txt
+streamlit run app.py
+```
+To see the experiments: `mlflow ui`, then open http://127.0.0.1:5000.
 
----
+## Tech stack
+Python, pandas, scikit-learn, XGBoost, MLflow, Streamlit, joblib
 
-## 🚀 Project Highlights
-
-- End-to-end Machine Learning pipeline
-- Extensive data cleaning and preprocessing
-- Feature engineering:
-  - Age Group
-  - Consume Frequency & Awareness Score (CF-AB Score)
-  - Zone Affluence Score (ZAS)
-  - Brand Switching Indicator (BSI)
-- Trained and compared multiple ML models:
-  - Gaussian Naive Bayes
-  - Logistic Regression
-  - Support Vector Machine (SVM)
-  - Random Forest
-  - XGBoost
-- Experiment tracking and comparison using **MLflow**
-- Best model selection based on accuracy
-- Interactive **Streamlit Web App** for real-time predictions
-
----
-
-## 🧠 Tech Stack
-
-- Python
-- Pandas, NumPy
-- Scikit-learn
-- XGBoost
-- MLflow
-- Streamlit
-- Joblib
-
----
-
-## 📊 Machine Learning Workflow
-
-1. Data Cleaning & Preprocessing
-2. Feature Engineering
-3. Handling Logical Outliers
-4. Encoding Categorical Variables
-5. Model Training & Evaluation
-6. Experiment Tracking with MLflow
-7. Best Model Selection
-8. Model Saving
-9. Real-time Prediction using Streamlit UI
-
----
-
-## 🧪 What the App Does
-
-The web app takes user inputs such as:
-- Age Group
-- Zone
-- Income Level
-- Consumption Frequency
-- Brand Preference
-- Health Concerns
-- Packaging Preference
-- Purchase Channel, etc.
-
-It then:
-- Applies the same feature engineering pipeline
-- Uses the trained ML model
-- Predicts the **most likely price range** of the beverage.
-
----
-
-## 📈 MLflow Experiment Tracking
-
-- All experiments are logged
-- Model metrics (accuracy) are tracked
-- Multiple models are compared
-- Best model is selected based on performance
-
----
-
-## 🎯 Use Cases
-
-- Beverage companies for pricing strategy
-- Marketing & product positioning teams
-- Market research and customer segmentation analysis
-- Data science learning & portfolio project
-
----
-
-## 👤 Author
-
-**Abhishek Jha**  
-🔗 Project Repo: https://dagshub.com/abhijha8287/beverage-price-prediction  
-🔗 Live App: https://beveragepricerangepredictorbyabhishek.streamlit.app/
-
----
-
-⭐ If you found this project interesting, feel free to star the repository!
+## Notes
+Live demo: https://beveragepricerangepredictorbyabhishek.streamlit.app
